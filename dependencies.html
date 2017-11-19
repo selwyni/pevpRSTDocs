@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building MASSIF &mdash; MASSIF 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="MASSIF 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Required Files" href="requiredfiles.html"/>
+        <link rel="prev" title="Introduction" href="intro.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MASSIF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">MASSIF Basics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building MASSIF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mac-osx">Mac OSX</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gfortran-gcc">gFortran, gcc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#open-mpi">Open-MPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fftw">FFTW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallel-hdf5">Parallel HDF5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-massif">Compiling MASSIF</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requiredfiles.html">Required Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backgroundinfo.html">Background Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detaileddesc.html">Detailed Evaluation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MASSIF Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cmdargs.html">cmdargs.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_io.html">file_io.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global_variables.html">global_variables.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inner_loop.html">inner_loop.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list_texture.html">list_texture.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local_variables.html">local_variables.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orientations.html">orientations.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outer_loop.html">outer_loop.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_texture.html">random_texture.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sugarcube_routines.html">sugarcube_routines.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">utility.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viscoplastic.html">viscoplastic.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voronoi.html">voronoi.f90</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="makefile.html">Makefile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MASSIF</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Building MASSIF</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dependencies.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-massif">
+<h1>Building MASSIF<a class="headerlink" href="#building-massif" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>The implementation of MASSIF at Carnegie Mellon University is capable of taking advantage of MPI for parallel computation and the HDF5 API for compressed hierarchial storage of the simulation output. A new computer that needs MASSIF setup will require the following</p>
+<blockquote>
+<div><ul class="simple">
+<li>gcc</li>
+<li>gfortran</li>
+<li>OpenMPI</li>
+<li>FFTW</li>
+<li>Parallel-enabled HDF5 API</li>
+</ul>
+</div></blockquote>
+<p>As of November 2017, no bundled installer exists for MASSIF. It is highly recommended that the user build the dependencies from source, as OpenMP and Parallel HDF5 are machine-hardware dependent. The following tutorial will explain how to install the libraries.</p>
+<div class="section" id="mac-osx">
+<h2>Mac OSX<a class="headerlink" href="#mac-osx" title="Permalink to this headline">¶</a></h2>
+<p>Mac OSX has several package managers available. Homebrew is the package manager used in this tutorial, and can be found at <a class="reference external" href="https://brew.sh">https://brew.sh</a>.</p>
+<p>I encourage that the following steps be done in a separate working directory. This can be done in terminal with</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">builddir</span>
+<span class="n">cd</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">builddir</span>
+</pre></div>
+</div>
+<div class="section" id="gfortran-gcc">
+<h3>gFortran, gcc<a class="headerlink" href="#gfortran-gcc" title="Permalink to this headline">¶</a></h3>
+<p>With brew installed, open up your terminal and run the following</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">gcc</span>
+</pre></div>
+</div>
+<p>To confirm that this installed correctly, the following should provide some informational output.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gcc</span> <span class="o">--</span><span class="n">version</span>
+<span class="n">gfortran</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>gcc and gfortran are compilers for C and Fortran code respectively.</p>
+</div>
+<div class="section" id="open-mpi">
+<h3>Open-MPI<a class="headerlink" href="#open-mpi" title="Permalink to this headline">¶</a></h3>
+<p>OpenMPI can be downloaded at <a class="reference external" href="https://www.open-mpi.org/software/ompi/">https://www.open-mpi.org/software/ompi/</a>. Unpack the tar.gz file in a working directory, and check that the configure file exists. Then run the following commands, inserting your own desired output path in the prefix flag.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">builddir</span>
+<span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;/Users/user/Desktop/OMPIPATH&quot;</span>
+<span class="n">make</span> <span class="nb">all</span>
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>At this point, ensure the OpenMPI has been added to the PATH environment variable, by adding the following line to the <code class="docutils literal"><span class="pre">~/.bashrc</span></code> file. The file may or may not exist at the time.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/user/Desktop/OMPIPATH:$</span><span class="si">{PATH}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Then run <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code> in terminal to add the OMPIPATH to the path variable. Run</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">which</span> <span class="n">mpicc</span>
+<span class="n">which</span> <span class="n">mpif90</span>
+</pre></div>
+</div>
+<p>to ensure that the MPI-enabled C and Fortran compilers are available, as well as from the same directory OpenMPI was installed in.</p>
+</div>
+<div class="section" id="fftw">
+<h3>FFTW<a class="headerlink" href="#fftw" title="Permalink to this headline">¶</a></h3>
+<p>FFTW can be downloade from <a class="reference external" href="https://www.fftw.org/download.html">https://www.fftw.org/download.html</a>. A version in the 3.3 range is preferable, although older version of MASSIF may run in v2.1.5. Unpack the tar.gz in the working direction, and check that the configure file exists. Then run the following command in terminal with the desired output path in the prefix flag.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">builddir</span>
+<span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;/Users/user/Desktop/FFTWPATH/&quot;</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">mpi</span>
+<span class="n">make</span>
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>Check that the output directory stated in the prefix flag contains four directories. Within the <code class="docutils literal"><span class="pre">include</span></code> directory, check that there are FFTW files with <code class="docutils literal"><span class="pre">-mpi</span></code> in the filename.</p>
+</div>
+<div class="section" id="parallel-hdf5">
+<h3>Parallel HDF5<a class="headerlink" href="#parallel-hdf5" title="Permalink to this headline">¶</a></h3>
+<p>Download the HDF5 API from <a class="reference external" href="https://support.hdfgroup.org/downloads/index.html">https://support.hdfgroup.org/downloads/index.html</a> and unpack the tar.gz in the working directory. Then run the following commands and insert your desired output path in the prefix flag.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">configure</span> <span class="n">CC</span><span class="o">=</span><span class="n">mpicc</span> <span class="n">FC</span><span class="o">=</span><span class="n">mpif90</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;/Users/user/Desktop/PHDF5PATH&quot;</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">fortran</span> <span class="o">--</span><span class="n">enable</span><span class="o">-</span><span class="n">parallel</span>
+<span class="n">make</span>
+<span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="compiling-massif">
+<h3>Compiling MASSIF<a class="headerlink" href="#compiling-massif" title="Permalink to this headline">¶</a></h3>
+<p>Configure your path variable to point towards the directories containing the Parallel HDF5, FFTW, and OpenMPI. Add the following lines to your <code class="docutils literal"><span class="pre">~/.bashrc</span></code>, omitting the OpenMPI addition if it exists already. Also ensure that the paths point to directories containing the relevant <code class="docutils literal"><span class="pre">bin</span></code>, <code class="docutils literal"><span class="pre">lib</span></code> and <code class="docutils literal"><span class="pre">include</span></code> directories.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/user/Desktop/OMPIPATH:$</span><span class="si">{PATH}</span><span class="s2">&quot;</span>
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/user/Desktop/FFTWPATH:$</span><span class="si">{PATH}</span><span class="s2">&quot;</span>
+<span class="n">export</span> <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;/Users/user/Desktop/PHDF5PATH:$</span><span class="si">{PATH}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.bashrc</span></code> to add these.</p>
+<p>At this point, go into the MASSIF Makefile and adjust the following flags. Also ensure that the correct Fortran compilers are used.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MPI</span><span class="o">=/</span><span class="n">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">OMPIPATH</span>
+<span class="n">HDF</span><span class="o">=/</span><span class="n">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">PHDF5PATH</span>
+<span class="n">FFTW3</span><span class="o">=/</span><span class="n">Users</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">FFTWPATH</span>
+
+<span class="c1"># Define Fortran Compilers</span>
+<span class="n">FC</span> <span class="o">=</span> <span class="n">gfortran</span>
+<span class="n">PFC</span> <span class="o">=</span> <span class="n">mpif90</span>
+</pre></div>
+</div>
+<p>Save the makefile, and run <code class="docutils literal"><span class="pre">make</span> <span class="pre">help</span></code> to see the available builds of MASSIF.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="requiredfiles.html" class="btn btn-neutral float-right" title="Required Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Jacky Lao.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

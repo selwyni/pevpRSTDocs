@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Makefile &mdash; MASSIF 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="MASSIF 0.1 documentation" href="index.html"/>
+        <link rel="prev" title="voronoi.f90" href="voronoi.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MASSIF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">MASSIF Basics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Building MASSIF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requiredfiles.html">Required Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backgroundinfo.html">Background Information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detaileddesc.html">Detailed Evaluation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">MASSIF Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cmdargs.html">cmdargs.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_io.html">file_io.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global_variables.html">global_variables.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inner_loop.html">inner_loop.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list_texture.html">list_texture.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local_variables.html">local_variables.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orientations.html">orientations.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outer_loop.html">outer_loop.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_texture.html">random_texture.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sugarcube_routines.html">sugarcube_routines.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">utility.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viscoplastic.html">viscoplastic.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voronoi.html">voronoi.f90</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Makefile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MASSIF</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Makefile</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/makefile.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="makefile">
+<h1>Makefile<a class="headerlink" href="#makefile" title="Permalink to this headline">¶</a></h1>
+<p>Updated Makefile for MASSIF as of October 17, 2017.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>#executable base names
+#serial = evpfft
+mpiparallel = pevpmpifft
+#ompparallel = pvpompfft
+#parallelhist = hpevpmpifft
+# ***************************************************************
+#
+#              System configuration specification
+#
+# ***************************************************************
+
+help:
+      @echo
+      @echo &quot;  Usage: make [program]&quot;
+      @echo
+      @echo &quot;  Available programs:&quot;
+      @echo &quot;    &quot;$(serial)
+      @echo &quot;    &quot;$(serial)&quot;-debug&quot;
+      @echo &quot;    &quot;$(mpiparallel)
+      @echo &quot;    &quot;$(mpiparallel)&quot;-debug&quot;
+      @echo &quot;    &quot;$(mpiparallel)&quot;-hdf&quot;
+
+
+# define the path of the required packages( MPI, FFTW, HDF)
+
+MPI=/Users/Shared/openmpi-1.8.1
+HDF=/Users/Shared/phdf
+FFTW3=/Users/Shared/fftw-3.3.4
+HDFlibs= ${HDF}/lib -lhdf5 -lhdf5_hl -lhdf5_fortran -lhdf5hl_fortran
+FFTWlibs=${FFTW3}/lib -lfftw3_mpi -lfftw3
+
+# define the fortran compilers
+
+FC = gfortran
+PFC = mpif90
+
+# define the path of include and libraries directory
+
+INCLUDEDIRS = -I${HDF}/include -I${MPI}/include -I/usr/include -I/usr/local/include -I${FFTW3}/include
+LDFLAGS = -m64 -L${HDF}/lib -lfftw3
+PLDFLAGS = -m64 -L${HDFlibs} -L${FFTWlibs} -lm
+SCLDFLAGS = -m64 -L${FFTWlibs}
+FFLAGS = -m64 -O3 -xf95-cpp-input -fno-second-underscore
+DEBUGFLAGS = -DDEBUG -gdwarf-2 -fbounds-check
+BLAS = -framework veclib -lz -ldl
+
+
+count := x
+zero := x
+one := x x
+
+increment = x $1
+count := $(call increment,$(count))
+
+#all builds
+MPIFLAGS = ${FFLAGS} -DMPIVERSION -DMPIFFT
+OMPFLAGS = ${FFLAGS} -DOMPVERSION -DOMPFFT
+SCFLAGS = ${FFLAGS} -DMPIVERSION -DSUGARCUBE -DMPI #-fast -ftrapuv -CB -CU -traceback
+P3DFLAGS = ${FFLAGS} -DMPIVERSON -DP3D
+
+VPATH = ./include:./include/modules:./include/paraFFT
+
+# dependencies.  Note: order is important.
+modules = \
+global_variables.f90 \
+local_variables.f90 \
+orientations.f90 \
+utility.f90 \
+file_io.f90 \
+cmdargs.f90 \
+viscoplastic.f90 \
+voronoi.f90 \
+random_texture.f90 \
+list_texture.f90 \
+setup.f90 \
+sugarcube_routines.f90 \
+outer_loop.f90 \
+inner_loop.f90
+
+
+
+all : $(serial) $(serial)-debug $(mpiparallel) $(mpiparallel)-debug \
+      $(mpiparallel)-hdf $(sugarcubeparallel) $(sugarcubeparallel)-debug splitup $(parallelhist)
+
+## Compile the serial version
+
+$(serial) : $(modules) evpfft.f90
+ifeq ($(strip $(count)),$(strip $(zero)))
+      @echo &quot;make : No system configuration specified in Makefile&quot;
+      @exit 2
+endif
+ifneq ($(strip $(count)),$(strip $(one)))
+      @echo &quot;make : More than one system configuration specified in Makefile&quot;
+      @exit 2
+endif
+      @echo -n &quot;   Compiling &quot;$@&quot; for &quot;$(BUILD)&quot;...&quot;
+      @$(FC) $(FFLAGS) -o $@ $^ $(INCLUDEDIRS) $(LDFLAGS)
+      @rm -f *.mod
+      @echo &quot;done.&quot;
+
+## Compile the serial-debug version
+
+$(serial)-debug: $(modules) evpfft.f90
+ifeq ($(strip $(count)),$(strip $(zero)))
+      @echo &quot;make : No system configuration specified in Makefile&quot;
+      @exit 2
+endif
+ifneq ($(strip $(count)),$(strip $(one)))
+      @echo &quot;make : More than one system configuration specified in Makefile&quot;
+      @exit 2
+endif
+      @echo -n &quot;   Compiling &quot;$@&quot; for &quot;$(BUILD)&quot;...&quot;
+      @$(FC) $(FFLAGS) $(DEBUGFLAGS) -o $@ $^ $(INCLUDEDIRS) $(LDFLAGS)
+      @rm -f *.mod
+      @echo &quot;done.&quot;
+
+## Compile the parallel version
+
+$(mpiparallel) : $(modules) evpfft.f90
+ifeq ($(strip $(count)),$(strip $(zero)))
+      @echo &quot;make : No system configuration specified in Makefile&quot;
+      @exit 2
+endif
+ifneq ($(strip $(count)),$(strip $(one)))
+      @echo &quot;make : More than one system configuration specified in Makefile&quot;
+      @exit 2
+endif
+      @echo -n &quot;   Compiling &quot;$@&quot; for &quot;$(BUILD)&quot;...&quot;
+      @$(PFC) $(MPIFLAGS) -o $@ $^ $(INCLUDEDIRS) $(PLDFLAGS)
+      @rm -f *.mod
+      @echo &quot;done.&quot;
+
+## Compile the parallel-debug varsion
+
+$(mpiparallel)-debug: $(modules) evpfft.f90
+ifeq ($(strip $(count)),$(strip $(zero)))
+      @echo &quot;make : No system configuration specified in Makefile&quot;
+      @exit 2
+endif
+ifneq ($(strip $(count)),$(strip $(one)))
+      @echo &quot;make : More than one system configuration specified in Makefile&quot;
+      @exit 2
+endif
+      @echo -n &quot;   Compiling &quot;$@&quot; for &quot;$(BUILD)&quot;...&quot;
+      @$(PFC) $(MPIFLAGS) $(DEBUGFLAGS) -DHDF -o $@ $^ $(INCLUDEDIRS) $(PLDFLAGS)
+      @rm -f *.mod
+      @echo &quot;done.&quot;
+
+## Compile the parallel version conatining HDF libraries
+
+$(mpiparallel)-hdf: $(modules) evpfft.f90
+ifeq ($(strip $(count)),$(strip $(zero)))
+      @echo &quot;make : No system configuration specified in Makefile&quot;
+      @exit 2
+endif
+ifneq ($(strip $(count)),$(strip $(one)))
+      @echo &quot;make : More than one system configuration specified in Makefile&quot;
+      @exit 2
+endif
+      @echo -n &quot;   Compiling &quot;$@&quot; for &quot;$(BUILD)&quot;...&quot;
+      @$(PFC) $(MPIFLAGS) -DHDF -o $@ $^ $(INCLUDEDIRS) $(PLDFLAGS)
+      @rm -f *.mod
+      @echo &quot;done.&quot;
+
+
+
+
+#EJL UDOT HISTORY
+$(parallelhist) : $(modules) evpfft.f90
+ifeq ($(strip $(count)),$(strip $(zero)))
+      @echo &quot;make : No system configuration specified in Makefile&quot;
+      @exit 2
+endif
+ifneq ($(strip $(count)),$(strip $(one)))
+      @echo &quot;make : More than one system configuration specified in Makefile&quot;
+      @exit 2
+endif
+      @echo -n &quot;   Compiling &quot;$@&quot; for &quot;$(BUILD)&quot;...&quot;
+      @$(PFC) $(MPIFLAGS) -DHIST -o $@ $^ $(INCLUDEDIRS) $(PLDFLAGS)
+      @rm -f *.mod
+      @echo &quot;done.&quot;
+
+
+
+
+clean:
+      @rm -f *.mod
+#     @rm -f $(serial) $(serial)-debug
+#     @rm -f $(mpiparallel) $(mpiparallel)-debug
+#     @rm -f $(ompparallel) $(ompparallel)-debug
+#     @rm -f $(sugarcubeparallel) $(sugarcubeparallel)-debug
+#     @rm -f splitup
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="voronoi.html" class="btn btn-neutral" title="voronoi.f90" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Jacky Lao.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

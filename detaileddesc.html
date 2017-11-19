@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Detailed Evaluation &mdash; MASSIF 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="MASSIF 0.1 documentation" href="index.html"/>
+        <link rel="next" title="cmdargs.f90" href="cmdargs.html"/>
+        <link rel="prev" title="Background Information" href="backgroundinfo.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MASSIF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">MASSIF Basics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dependencies.html">Building MASSIF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requiredfiles.html">Required Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backgroundinfo.html">Background Information</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Detailed Evaluation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#relevant-papers">Relevant Papers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MASSIF Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cmdargs.html">cmdargs.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_io.html">file_io.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global_variables.html">global_variables.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inner_loop.html">inner_loop.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list_texture.html">list_texture.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local_variables.html">local_variables.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orientations.html">orientations.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outer_loop.html">outer_loop.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_texture.html">random_texture.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup.html">setup.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sugarcube_routines.html">sugarcube_routines.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">utility.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viscoplastic.html">viscoplastic.f90</a></li>
+<li class="toctree-l1"><a class="reference internal" href="voronoi.html">voronoi.f90</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="makefile.html">Makefile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MASSIF</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Detailed Evaluation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/detaileddesc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="detailed-evaluation">
+<h1>Detailed Evaluation<a class="headerlink" href="#detailed-evaluation" title="Permalink to this headline">¶</a></h1>
+<p>The following resources provide a deeper understanding and applications of MASSIF.</p>
+<div class="section" id="relevant-papers">
+<h2>Relevant Papers<a class="headerlink" href="#relevant-papers" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Lebensohn, R. A. (2001). N-site modeling of a 3D viscoplastic polycrystal using Fast Fourier Transform. Acta Materialia, 49(14), 2723–2737. <a class="reference external" href="https://doi.org/10.1016/S1359-6454(01)00172-0">https://doi.org/10.1016/S1359-6454(01)00172-0</a></li>
+<li>Lebensohn, R. A., Liu, Y., &amp; Castañeda, P. P. (2004). On the accuracy of the self-consistent approximation for polycrystals: Comparison with full-field numerical simulations. Acta Materialia, 52(18), 5347–5361. <a class="reference external" href="https://doi.org/10.1016/j.actamat.2004.07.040">https://doi.org/10.1016/j.actamat.2004.07.040</a></li>
+<li>Lebensohn, R. A., Brenner, R., Castelnau, O., &amp; Rollett, A. D. (2008). Orientation image-based micromechanical modelling of subgrain texture evolution in polycrystalline copper. Acta Materialia, 56(15), 3914–3926. <a class="reference external" href="https://doi.org/10.1016/j.actamat.2008.04.016">https://doi.org/10.1016/j.actamat.2008.04.016</a></li>
+<li>Lebensohn, R. A., Kanjarla, A. K., &amp; Eisenlohr, P. (2012). An elasto-viscoplastic formulation based on fast Fourier transforms for the prediction of micromechanical fields in polycrystalline materials. International Journal of Plasticity, 32–33, 59–69. <a class="reference external" href="https://doi.org/10.1016/j.ijplas.2011.12.005">https://doi.org/10.1016/j.ijplas.2011.12.005</a></li>
+<li>Prakash, A., &amp; Lebensohn, R. A. (2009). Simulation of micromechanical behavior of polycrystals: finite elements versus fast Fourier transforms. Modelling and Simulation in Materials Science and Engineering, 17(6), 64010. Retrieved from <a class="reference external" href="http://stacks.iop.org/0965-0393/17/i=6/a=064010">http://stacks.iop.org/0965-0393/17/i=6/a=064010</a></li>
+<li>Pokharel, R., &amp; Lebensohn, R. A. (2017). Instantiation of crystal plasticity simulations for micromechanical modelling with direct input from microstructural data collected at light sources. Scripta Materialia, 132, 73–77. <a class="reference external" href="https://doi.org/10.1016/j.scriptamat.2017.01.025">https://doi.org/10.1016/j.scriptamat.2017.01.025</a></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cmdargs.html" class="btn btn-neutral float-right" title="cmdargs.f90" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="backgroundinfo.html" class="btn btn-neutral" title="Background Information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Jacky Lao.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
